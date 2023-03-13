@@ -7,7 +7,7 @@ import Notification from './Notification/Notification';
 
 const App = () => {
   const contacts = useSelector(state => state.contacts.contacts.contacts);
-  console.log(contacts.length);
+
   return (
     <>
       <h1>Phonebook</h1>

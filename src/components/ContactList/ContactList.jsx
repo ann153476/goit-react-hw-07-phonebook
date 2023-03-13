@@ -14,26 +14,30 @@ const ContactList = () => {
   return (
     <div>
       <ul>
-        {filterContacts.map(item => {
-          return (
-            <li key={item.id} className={s.flex}>
-              <div className={s.box__contact}>
-                <p>{item.name}</p>
-                <p>{item.number}</p>
-              </div>
+        {filterContacts.length === 0 ? (
+          <h1>no such contact found</h1>
+        ) : (
+          filterContacts.map(item => {
+            return (
+              <li key={item.id} className={s.flex}>
+                <div className={s.box__contact}>
+                  <p>{item.name}</p>
+                  <p>{item.number}</p>
+                </div>
 
-              <button
-                className={s.btn}
-                type="submit"
-                onClick={() => {
-                  dispatch(deleteContact(item.id));
-                }}
-              >
-                Delete
-              </button>
-            </li>
-          );
-        })}
+                <button
+                  className={s.btn}
+                  type="submit"
+                  onClick={() => {
+                    dispatch(deleteContact(item.id));
+                  }}
+                >
+                  Delete
+                </button>
+              </li>
+            );
+          })
+        )}
       </ul>
     </div>
   );
