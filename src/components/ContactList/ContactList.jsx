@@ -15,7 +15,7 @@ const ContactList = () => {
     <div>
       <ul>
         {filterContacts.length === 0 ? (
-          <h1>no such contact found</h1>
+          <h2>no such contact found</h2>
         ) : (
           filterContacts.map(item => {
             return (
