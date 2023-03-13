@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact } from 'redux/contacts-slice';
+import { deleteContact } from 'redux/operations';
+
 import s from '../App.module.css';
 
 const ContactList = () => {
@@ -10,6 +11,7 @@ const ContactList = () => {
     ({ name, number }) =>
       name.toLowerCase().includes(filterValue) || number.includes(filterValue)
   );
+
   const dispatch = useDispatch();
   return (
     <div>
